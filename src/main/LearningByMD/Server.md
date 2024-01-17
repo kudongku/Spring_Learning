@@ -68,3 +68,9 @@ main] c.s.s.SpringLearningApplication          : Started SpringLearningApplicati
 3. Postman 접속
 - GET 방식 으로 http://localhost:8080/api/hello Send
 - body 에서 Hello 받은 것을 확인
+
+## port 변경
+1. application properties 에서 
+   1. ```server.port = 8081``` 입력
+2. application 실행 시
+   1. ```Tomcat started on port(s): 8081 (http) with context path ''```출력
