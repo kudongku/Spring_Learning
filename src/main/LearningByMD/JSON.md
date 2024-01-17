@@ -1,3 +1,6 @@
+# JSON
+
+## @RestController 를 사용하는 경우
 ```java
 @Controller
 public class HelloController {
@@ -26,6 +29,8 @@ public class HelloController {
 }
 
 ```
+## @RestController 사용하는 경우
+- ResponseBody 를 사용할 필요가 없음
 ```java
 @RestController //response body가 다 적용된다.
 public class HelloController {
