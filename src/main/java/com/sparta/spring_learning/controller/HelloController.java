@@ -1,32 +1,20 @@
 package com.sparta.spring_learning.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import com.sparta.spring_learning.Model.Star;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@RequestMapping("/hello")
+@RestController //response body가 다 적용된다.
 public class HelloController {
-    @GetMapping("/get")
-    @ResponseBody // 순수하게 문자열만 반환
-    public String hello(){
-        return "Hello, world";
+
+    @GetMapping("/json/string")
+    public String helloStringJson() {
+        return "{\"name\":\"Robbie\",\"age\":95}";
     }
 
-    @PostMapping("/")
-    @ResponseBody // 순수하게 문자열만 반환
-    public String post(){
-        return "post";
+    @GetMapping("/json/class")
+    public Star helloStarJson() {
+        return new Star("Robbie", 95);
     }
 
-    @PutMapping("/")
-    @ResponseBody // 순수하게 문자열만 반환
-    public String put(){
-        return "put";
-    }
-
-    @DeleteMapping("/")
-    @ResponseBody // 순수하게 문자열만 반환
-    public String delete(){
-        return "delete";
-    }
 }
