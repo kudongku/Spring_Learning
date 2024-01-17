@@ -2,19 +2,27 @@ package com.sparta.spring_learning.controller;
 
 import com.sparta.spring_learning.Model.Star;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController //response body가 다 적용된다.
+@RestController
+@RequestMapping("/response/rest")
 public class HelloController {
-
+    // [Response header]
+    //   Content-Type: text/html
+    // [Response body]
+    //   {"name":"Robbie","age":95}
     @GetMapping("/json/string")
     public String helloStringJson() {
         return "{\"name\":\"Robbie\",\"age\":95}";
     }
 
+    // [Response header]
+    //   Content-Type: application/json
+    // [Response body]
+    //   {"name":"Robbie","age":95}
     @GetMapping("/json/class")
-    public Star helloStarJson() {
+    public Star helloClassJson() {
         return new Star("Robbie", 95);
     }
-
 }

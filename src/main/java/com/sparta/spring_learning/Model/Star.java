@@ -4,11 +4,13 @@ import lombok.Getter;
 
 @Getter
 public class Star {
-    private static String name;
-    private static Integer age;
+    String name;
+    int age;
 
-    public Star(String name, Integer age) {
-        Star.name = name;
-        Star.age = age;
+    public Star(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
+
+    public Star() {}
 }
