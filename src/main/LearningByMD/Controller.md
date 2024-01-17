@@ -42,5 +42,53 @@ public class HelloController {
 ## @PostMapping("/")
 ## @PutMapping("/")
 ## @DeleteMapping("/")
+
 ## @ResponseBody
 - return 값을 문자열 그대로 리턴해준다.
+
+## 정적인 페이지 리턴
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>static hello</title>
+</head>
+<body>
+  <h1>hello, world</h1>
+</body>
+</html>
+```
+```java
+@Controller
+public class HtmlController {
+    @GetMapping("/hello")
+    public String hello(){
+        return "staticHello.html";
+    }
+}
+```
+- http://localhost:8081/hello
+```java
+    /*
+    정적인 페이지 들
+     */
+
+// thymeleaf 때문에 작동 안됨
+//    @GetMapping("/hello")
+//    public String hello(){
+//        return "staticHello.html";
+//    }
+
+// thymeleaf 사용중에 html 리턴하고 싶으면 redirect
+//    @GetMapping("/hello/redirect")
+//    public String helloRedirect(){
+//        return "redirect:/staticHello.html";
+//    }
+//
+//    //thymeleaf를 사용하면 html을 빼도 된다.
+//    @GetMapping("/hello/template")
+//    public String helloTemplate(){
+//        return "templateHtml";
+//    }
+```
